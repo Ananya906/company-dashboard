@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leader Login</title>
+    <link rel="stylesheet" href="empform.css"> 
+    <script>
+        function redirectToEmployeeDashboard(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            console.log('Username:', username);
+            console.log('Password:', password);
+            if (username === 'leader' && password === 'leader12') {
+              
+                window.location.href = 'leaderdash.html'; 
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Leader Login</h2>
+        <form onsubmit="redirectToEmployeeDashboard(event)"> 
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
